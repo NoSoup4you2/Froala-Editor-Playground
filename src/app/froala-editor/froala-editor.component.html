@@ -1,4 +1,4 @@
-
+<!--
                           <div class="col-md-10 offset-md-1">
 
                             <igx-card>
@@ -53,7 +53,39 @@
 
             </div>
 
+        <div class="small-space"></div> -->
+
+
+
+                          <div class="col-md-10 offset-md-1">
+
+                            <igx-card>
+                                <igx-card-header>
+                                    <h3 class="igx-card-header__title">{{heading}}</h3>
+                                </igx-card-header>
+
+                                <igx-card-content>
+
+                      <form novalidate [formGroup]="form" (submit)="create(form.value)">
+
+                        <div class="col-md-12" *ngIf="froalaOptions">
+                            <div [froalaEditor]="froalaOptions" id="template-body"
+                                 formControlName="message_body">
+
+                            </div>
+                        </div>
+
+                    </form>
+                  </igx-card-content>
+                </igx-card>
+
+            </div>
+
         <div class="small-space"></div>
+
+
+
+
 
 
 

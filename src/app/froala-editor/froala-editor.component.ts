@@ -33,6 +33,7 @@ export class FroalaEditorComponent implements OnInit {
 ) {}
 
   ngOnInit() {
+
     this.initForm();
     this.createCustomBttm();
     this.setFroalaOptions(this);
@@ -52,6 +53,7 @@ export class FroalaEditorComponent implements OnInit {
 
   private setFroalaOptions(componentInstance) {
   this.froalaOptions = {
+
       // key: environment.froala.license.version3,
       charCounter: true,
       charCounterCount: true,
@@ -83,28 +85,34 @@ toolbarButtons: ToolbarButtons,
 }
 
 createCustomBttm() {
-  FroalaEditor.DefineIcon('my_dropdown', {NAME: 'cog', SVG_KEY: 'cogs'});
-  FroalaEditor.RegisterCommand('my_dropdown', {
-  title: 'Advanced options',
-  type: 'dropdown',
-  focus: false,
-  undo: false,
-  refreshAfterCallback: true,
-  options: {
-      '{{ Hello: Test| "" }}': 'Option 1',
-      v2: 'Option 2'
-  },
-  callback (cmd, val) {
-      console.log (val);
-  },
-  // Callback on refresh.
-  refresh ($btn) {
-      console.log ('do refresh');
-  },
-  // Callback on dropdown show.
-  refreshOnShow ($btn, $dropdown) {
-      console.log ('do refresh when show');
-  }
+  // FroalaEditor.DefineIcon('my_dropdown', {NAME: 'cog', SVG_KEY: 'cogs'});
+  // FroalaEditor.RegisterCommand('my_dropdown', {
+  // title: 'Advanced options',
+  // type: 'dropdown',
+  // focus: false,
+  // undo: false,
+  // refreshAfterCallback: true,
+  // options: {
+  //     '{{ Hello: Test| "" }}': 'Option 1',
+  //     v2: 'Option 2'
+  // },
+  // callback (cmd, val) {
+  //     console.log (val);
+  // },
+  // // Callback on refresh.
+  // refresh ($btn) {
+  //     console.log ('do refresh');
+  // },
+  // // Callback on dropdown show.
+  // refreshOnShow ($btn, $dropdown) {
+  //     console.log ('do refresh when show');
+  // }
+  // });
+  FroalaEditor.DefineIcon('test', {NAME: 'test', SVG_KEY: 'help'});
+  FroalaEditor.RegisterCommand('test', {
+    callback: function () {
+      alert('Custom button works');
+    }
   });
 }
 
