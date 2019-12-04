@@ -1,0 +1,9 @@
+<button igxButton (click)="toggleDropDown($event)"
+        type="button"
+        [igxDropDownItemNavigation]="dropdown1">{{title}}</button>
+<igx-drop-down #dropdown1 (onSelection)="onSelect($event)">
+    <igx-drop-down-item *ngFor="let option of options" [value]="option">
+        {{ option.name }}
+    </igx-drop-down-item>
+</igx-drop-down>
+
