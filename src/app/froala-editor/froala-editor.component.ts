@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ɵConsole } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ToolbarButtons, insertHtmlField } from '../models/froala';
 import FroalaEditor from 'froala-editor';
@@ -126,7 +126,9 @@ addField(value: string) {
   };
   }
 
-
+  showResult() {
+    console.log('We are logging')
+  }
 
 
 

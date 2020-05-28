@@ -16,7 +16,7 @@ import {IServerDropdownOption} from '../../models/server-dropdown';
 })
 export class DropdownSelectComponent implements OnInit {
 
-    @ViewChild(IgxDropDownComponent, {static: false}) public igxDropDown: IgxDropDownComponent;
+    @ViewChild(IgxDropDownComponent) public igxDropDown: IgxDropDownComponent;
 
     @Input() title: string;
     @Input() options: IServerDropdownOption[] = [];
